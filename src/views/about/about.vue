@@ -27,18 +27,29 @@
 </template>
 
 <script>
+import { getAboutInfo } from '../../service/dataExchange'
 export default {
   name: "about",
   data() {
     return {
-      picUrl: require('../../assets/logo.png'), //图片地址
-      name: '福利社区', //名称
-      description: '福利社区是三村晖对平台志愿者公益行为的激励性回馈，志愿者可以使用做公益获得的平安时间币在福利社区兑换商品。', //描述
-      serviceClass: '公益服务', //服务类别
-      mainInfo: '中国平安保险(集团)股份有限公司', //主体信息
-      serviceTel:'400-1000-111', //客服电话
-      likeStatus: localStorage.getItem('likeFlag') || '0', //点赞状态 1-已赞，0-未赞
+      picUrl: '', //图片地址
+      name: '', //名称
+      description: '', //描述
+      serviceClass: '', //服务类别
+      mainInfo: '', //主体信息
+      serviceTel:'', //客服电话
+      likeStatus: '', //点赞状态 1-已赞，0-未赞
     }
+  },
+  created: async function() {
+    const { data } = await getAboutInfo()
+    this.picUrl = data.picUrl || require('../../assets/logo.png')
+    this.name = data.name
+    this.description = data.description
+    this.serviceClass = data.serviceClass
+    this.mainInfo = data.mainInfo
+    this.serviceTel = data.serviceTel
+    this.likeStatus = localStorage.getItem('likeFlag') || data.likeStatus
   },
   methods: {
     addLike () { //点赞
