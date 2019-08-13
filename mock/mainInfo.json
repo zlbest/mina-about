@@ -1,0 +1,9 @@
+{
+  "name": "福利社区", 
+  "developer": "平安科技（深圳）有限公司",
+  "serviceType": "金融服务",
+  "websites": ["test-mobile.health.pingan.com","test-mobile.health.pingan.com","test-mobile.health.pingan.com"],
+  "version": "0.017",
+  "date": "2019-08-13",
+  "serviceDeclaration": "本服务由开发者向平安小程序提供，开发者对本服务信息内容、数据资料及其运营行为等的真实性、合法性及有效性承担全部责任。"
+}
