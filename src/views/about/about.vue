@@ -31,12 +31,12 @@ export default {
   name: "about",
   data() {
     return {
-      picUrl: '', //图片地址
+      picUrl: require('../../assets/logo.png'), //图片地址
       name: '福利社区', //名称
-      description: '福利社区各类优惠，专为您提供各类优惠信息活动等各种聚集各类优惠和各类福利，好玩优惠等你来。', //描述
-      serviceClass: '金融服务', //服务类别
-      mainInfo: '平安科技（深圳）有限公司', //主体信息
-      serviceTel:'95511', //客服电话
+      description: '福利社区是三村晖对平台志愿者公益行为的激励性回馈，志愿者可以使用做公益获得的平安时间币在福利社区兑换商品。', //描述
+      serviceClass: '公益服务', //服务类别
+      mainInfo: '中国平安保险(集团)股份有限公司', //主体信息
+      serviceTel:'400-1000-111', //客服电话
       likeStatus: localStorage.getItem('likeFlag') || '0', //点赞状态 1-已赞，0-未赞
     }
   },
@@ -69,7 +69,7 @@ export default {
     @include wh(126px, 126px);
     margin-bottom: 40px;
     border-radius: 50%;
-    background: #d8d8d8;
+    //background: #d8d8d8;
     box-sizing: content-box;
     border: none;
   }
